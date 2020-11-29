@@ -372,9 +372,10 @@ class Dimension extends hasCache {
 		return this.callCache("mult", function () {
 			let ret = D.pow(this.multPerBought, this.bought)
 				.mul(
-					D(0.015/3600+1)
+					D(0.015+1)
 						.pow((game.unfunityUpgBought.superUnfun ? game.unfunityUpgBought.superUnfun : D(0)).add(1))
 						.pow(game.unfunitypoints)
+						.pow(1/3600)
 				)
 				.iteratedlog(10, this.loc[0]);
 			if (ret.lt(1) || ret.isNaN()) ret = D(1);
