@@ -10,10 +10,11 @@ function updateElements() {
 	document.getElementById("unfunitypoints").innerHTML = `You have ${f(game.unfunitypoints)} unfunity points giving a ${f(
 		D(1.01)
 			.pow((game.unfunityUpgBought.superUnfun ? game.unfunityUpgBought.superUnfun : D(0)).add(1))
-			.pow(game.unfunitypoints),
+			.pow(game.unfunitypoints)
+			.pow(1/3600),
 		4
 	)}&times; boost to all production.
-	<br>You are producing ${f(D.pow(2, game.unfunityUpgBought.doubleUnfun))} unfunity per second ${game.onlineUnfun.neq(1) ? `with a ${f(game.onlineUnfun)}&times; online multiplier, giving total production of ${f(game.ufph)} unfunity per hour` : ""}`;
+	<br>You are producing ${f(D.pow(2, game.unfunityUpgBought.doubleUnfun).mul(D.pow(D.log10(game.unfunitypoints),D.sqrt(game.unfunityUpgBought.un3Fun))))} unfunity per second ${game.onlineUnfun.neq(1) ? `with a ${f(game.onlineUnfun)}&times; online multiplier, giving total production of ${f(game.ufph)} unfunity per hour` : ""}`;
 
 	if (Object.keys(game.prestige).length > 1) setdisp("tabb3", "inline-block");
 	else hide("tabb3");
