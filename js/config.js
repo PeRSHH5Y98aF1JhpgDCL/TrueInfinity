@@ -46,5 +46,14 @@ let config = {
 			addr: ["unfunitypoints"],
 			currencyName: "unfunity points",
 		},
+		un3Fun: {
+			name: "Unununfun",
+			baseCost: D(10000),
+			costScale: D(25),
+			levelCap: D(Infinity),
+			desc: "Unfunity is even more unfun and creates more of itself",
+			addr: ["unfunitypoints"],
+			currencyName: "unfunity points"
+		}
 	},
 };
